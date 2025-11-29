@@ -76,7 +76,7 @@ body.light footer { background: var(--card-light); }
   <a href="bilgi.html">Bilgiler</a>
   <a href="koruma.html">Koruma</a>
   <a href="galeri.html">Galeri</a>
-  <a href="about.html">Hakkımda</a>
+  <a href="about.html">Hakkımda ve Kaynakça</a>
 </div>
 <button id="sideToggle">☰</button>
 <div id="themeToggle">Aydınlık / Karanlık</div>
@@ -147,4 +147,5 @@ if(localStorage.getItem('theme') === 'light') bodyEl.classList.add('light');
 toggleBtn.onclick = () => { bodyEl.classList.toggle('light'); localStorage.setItem('theme', bodyEl.classList.contains('light') ? 'light' : 'dark'); };
 </script>
 </body>
+
 </html>
