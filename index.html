@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anadolu Leoparı – Ana Sayfa</title>
+<style>
+:root {
+  --bg-dark: #1f1f1f;
+  --bg-light: #e8e8e8;
+  --text-dark: #f5f5f5;
+  --text-light: #222;
+  --accent-dark: #c0c0c0;
+  --accent-light: #888888;
+  --card-dark: #2a2a2a;
+  --card-light: #ffffff;
+  --nav-dark: #2c2c2c;
+  --nav-light: #f0f0f0;
+}
+body {
+  margin:0; font-family:'Segoe UI', Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  overflow-x:hidden;
+  transition:0.3s;
+}
+body.light { background: var(--bg-light); color: var(--text-light); }
+
+/* SIDE NAV */
+#sideNav {
+  position:fixed; top:0; left:-220px; width:220px; height:100%; background: var(--nav-dark); color:#fff; padding:20px; z-index:1500;
+  transition: left 0.5s ease, opacity 0.5s ease;
+  opacity:0;
+}
+#sideNav.open { left:0; opacity:1; }
+#sideNav h2 { margin-top:0; }
+#sideNav a { display:block; color:#fff; text-decoration:none; margin:15px 0; font-weight:bold; padding:6px 10px; border-radius:6px; transition:0.3s; border:1px solid transparent; }
+#sideNav a:hover { color:var(--accent-dark); border-color:var(--accent-dark); background:rgba(255,255,255,0.05); }
+#sideNav button { margin-top:20px; padding:10px; border:none; border-radius:6px; cursor:pointer; font-weight:bold; background:var(--accent-dark); color:#000; border:1px solid #999; transition:0.3s; }
+#sideNav button:hover { filter: brightness(1.2); }
+
+/* LIGHT MODE BUTTON RENKLERİ */
+body.light #sideToggle { background: #888;  color: #fff; }
+body.light #themeToggle { background: #888;  color: #fff; }
+body.light #sideNav { background: var(--nav-light); color:#222; }
+body.light #sideNav a { color: #222; }
+body.light #sideNav a:hover { color: #555; border-color: #555; background: rgba(0,0,0,0.05); }
+
+/* TOGGLE BUTTON */
+#sideToggle { position:fixed; top:20px; left:20px; z-index:2000; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:bold; background: var(--accent-dark); color:#000; border:none; transition:0.3s; }
+#sideToggle.open { left:240px; transition:0.3s; }
+#themeToggle { position:fixed; top:20px; right:20px; z-index:2000; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:bold; background: var(--accent-dark); color:#000; border:none; transition:0.3s; }
+
+#hero { display:flex; align-items:center; justify-content:center; height:80vh; background: inherit; position:relative; overflow:hidden; }
+#hero h1 { font-size:60px; text-align:center; z-index:2; position:relative; }
+.shape { position:absolute; border-radius:50%; opacity:0.3; animation: orbit 15s linear infinite; }
+.shape1 { width:120px; height:120px; background:#f5f5f5; top:20%; left:10%; animation-delay:0s; }
+.shape2 { width:100px; height:100px; background:#888; top:30%; left:70%; animation-delay:5s; }
+.shape3 { width:80px; height:80px; background:#ccc; top:60%; left:40%; animation-delay:10s; }
+@keyframes orbit { 0%{ transform: rotate(0deg) translateX(50px) rotate(0deg); } 50%{ transform: rotate(180deg) translateX(50px) rotate(-180deg); } 100%{ transform: rotate(360deg) translateX(50px) rotate(-360deg); } }
+
+section { padding:140px 10% 100px 10%; min-height:80vh; animation: fadeIn 1s ease; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:40px; }
+.card { background: var(--card-dark); padding:25px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); transition:0.3s; }
+.card:hover { transform: translateY(-6px); border-color: var(--accent-dark); }
+body.light .card { background: var(--card-light); border-color: rgba(0,0,0,0.08); }
+@keyframes fadeIn { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+footer { text-align:center; padding:25px; opacity:0.8; background: var(--card-dark); margin-top:40px; }
+body.light footer { background: var(--card-light); }
+</style>
+</head>
+<body>
+<div id="sideNav">
+  <h2>Menü</h2>
+  <a href="index.html">Ana Sayfa</a>
+  <a href="bilgi.html">Bilgiler</a>
+  <a href="koruma.html">Koruma</a>
+  <a href="galeri.html">Galeri</a>
+  <a href="about.html">Hakkımda</a>
+</div>
+<button id="sideToggle">☰</button>
+<div id="themeToggle">Aydınlık / Karanlık</div>
+
+<section id="hero">
+  <h1>Hoş Geldiniz</h1>
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
+  <div class="shape shape3"></div>
+</section>
+
+<section id="bilgi">
+  <h2>Temel Bilgiler</h2>
+  <div class="cards">
+    <div class="card"><h3>📌 Tür Özellikleri</h3><p>Anadolu Leoparı güçlü ve çeviktir, genellikle yalnız yaşar.</p></div>
+    <div class="card"><h3>📍 Yaşam Alanı</h3><p>Toroslar ve Güneydoğu Anadolu’da yaşamaktadır.</p></div>
+    <div class="card"><h3>⚠️ Tehlike Durumu</h3><p>Kaçak avcılık ve habitat kaybı nedeniyle kritik tehlike altında.</p></div>
+  </div>
+</section>
+
+<section id="koruma">
+  <h2>Koruma Çalışmaları</h2>
+  <div class="cards">
+    <div class="card"><h3>🔍 İz Takibi</h3><p>Fotokapanlar ve GPS ile hareketleri izlenmektedir.</p></div>
+    <div class="card"><h3>🌲 Habitat Koruma</h3><p>Doğal yaşam alanlarının korunması için projeler yürütülüyor.</p></div>
+    <div class="card"><h3>👥 Halk Bilinçlendirme</h3><p>Halkla iletişim kurularak türün önemi anlatılıyor.</p></div>
+  </div>
+</section>
+
+<section id="hakkimda">
+  <h2>Web Sitesi Hakkında</h2>
+  <div class="cards">
+    <div class="card"><p>Bu site, Anadolu Leoparı'nı tanıtmak ve korunmasına dikkat çekmek amacıyla hazırlanmıştır.</p></div>
+    <div class="card"><p>İlk defa web tasarımı yapmış birisi olarak elimden geleni yaptım, iyi gezmeler.</p></div>
+  </div>
+</section>
+
+<footer>
+  Anadolu Leoparı Koruma Projesi – Muhammed Karakuş
+</footer>
+
+<script>
+const sideNav = document.getElementById('sideNav');
+const sideToggle = document.getElementById('sideToggle');
+let autoCloseTimeout;
+
+sideToggle.onclick = (e) => {
+  sideNav.classList.toggle('open');
+  sideToggle.classList.toggle('open');
+  if(sideNav.classList.contains('open')) {
+    clearTimeout(autoCloseTimeout);
+    autoCloseTimeout = setTimeout(() => { sideNav.classList.remove('open'); sideToggle.classList.remove('open'); }, 3500);
+  }
+};
+
+// Click outside to close
+document.addEventListener('click', (e) => {
+  if(!sideNav.contains(e.target) && e.target !== sideToggle) {
+    sideNav.classList.remove('open');
+    sideToggle.classList.remove('open');
+    clearTimeout(autoCloseTimeout);
+  }
+});
+
+const bodyEl = document.body;
+const toggleBtn = document.getElementById('themeToggle');
+if(localStorage.getItem('theme') === 'light') bodyEl.classList.add('light');
+toggleBtn.onclick = () => { bodyEl.classList.toggle('light'); localStorage.setItem('theme', bodyEl.classList.contains('light') ? 'light' : 'dark'); };
+</script>
+</body>
+</html>
